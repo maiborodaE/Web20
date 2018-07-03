@@ -48,8 +48,16 @@ public class UserCredentials {
 //    Reports links:
 public static String photoGalleryMenuCss = "div.parent-list > div:nth-of-type(4) > div:first-child > div > span.left-menu-sub-item > div > div > div";
 public static String answersMenuCss = "body > div:nth-of-type(2) > a:nth-of-type(2)";
-//    PhotoGallery Links:
+    public static String visitsMenuCss = "body > div:nth-of-type(2) > a:nth-of-type(3)";
 
+//    PhotoGallery Links:
+    public static String QHinputCSS = "div > div:first-child > div:first-child > div.input__right-side___cOpcX > input";
+    public static String CalendarCSS = "div.input__readOnly___TEuol > div.input__right-side___cOpcX > input";
+    public static String TTinputCSS = "div > div:first-child > div:nth-of-type(3) > div:first-child > div.input__right-side___cOpcX > input";
+    public static String EmployeeinputCSS = "div > div:first-child > div:first-child > div.input__right-side___cOpcX > input";
+
+
+//AnswerMenu links:
 
 
 
