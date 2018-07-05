@@ -8,7 +8,9 @@ import org.junit.Test;
 public class TestMethods {
 
     @Test
-    public void login() throws InterruptedException {
+    public void login() throws Exception {
+
+
         ChromeLoginTest chromeManufTest = new ChromeLoginTest();
         chromeManufTest.createManuf();
     }
