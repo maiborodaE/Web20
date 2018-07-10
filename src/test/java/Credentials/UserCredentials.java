@@ -46,15 +46,16 @@ public class UserCredentials {
     public static String saveManufButton = "div.button-wrap > button:first-child > div > span";
 
 //    Reports links:
-public static String photoGalleryMenuCss = "div.parent-list > div:nth-of-type(4) > div:first-child > div > span.left-menu-sub-item > div > div > div";
+public static String photoGalleryMenuCss = "body > div:nth-of-type(2) > a:first-child";
 public static String answersMenuCss = "body > div:nth-of-type(2) > a:nth-of-type(2)";
     public static String visitsMenuCss = "body > div:nth-of-type(2) > a:nth-of-type(3)";
 
 //    PhotoGallery Links:
-    public static String QHinputCSS = "div > div:first-child > div:first-child > div.input__right-side___cOpcX > input";
+    public static String QHinputXpath = "//*[starts-with(@class, \"input__label\") and text() = 'Анкета']/../input";
+
     public static String CalendarCSS = "div.input__readOnly___TEuol > div.input__right-side___cOpcX > input";
-    public static String TTinputCSS = "div > div:first-child > div:nth-of-type(3) > div:first-child > div.input__right-side___cOpcX > input";
-    public static String EmployeeinputCSS = "div > div:first-child > div:first-child > div.input__right-side___cOpcX > input";
+    public static String TTinputXpath = "//*[starts-with(@class, \"filters-pane\")]//*[starts-with(@class, \"input__label\") and text() = 'Торговая точка']/../input";
+    public static String EmployeeinputXpath = "//*[starts-with(@class, \"input__label\") and text() = 'Сотрудник']/../input";
 
 
 //AnswerMenu links:

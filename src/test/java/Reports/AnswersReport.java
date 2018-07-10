@@ -1,49 +1,75 @@
 package Reports;
 
-import Credentials.UserCredentials;
+import Utils.EffieLoginPage;
+import com.codeborne.selenide.Configuration;
+import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import java.util.concurrent.TimeUnit;
 
 import static Credentials.UserCredentials.*;
+import static com.codeborne.selenide.Selenide.*;
 
 public class AnswersReport {
 
-    public void findAnswers() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\maiboroda.e\\Downloads\\chromedriver_win32\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        String randomName = UserCredentials.randomName;
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        driver.get(UserCredentials.baseURL);
-        driver.manage().window().maximize();
-
-        driver.findElement(By.name(loginInputName)).sendKeys(login);
-        driver.findElement(By.name(pswrdInputName)).sendKeys(pswrd);
-        driver.findElement(By.cssSelector(loginButtonCss)).click();
-        Thread.sleep(3000);
-
-        driver.findElement(By.cssSelector(reportsMenuCss)).click();
+    @Test
+    public void findAnswersCHrome() throws InterruptedException {
+        Configuration.startMaximized = true;
+        Configuration.browser = "Chrome";
+        clearBrowserCookies();
+        open("https://portal-test.effie.ua/anon/login", EffieLoginPage.class).logincred(login,pswrd);
+        $(By.cssSelector(reportsMenuCss)).click();
         Thread.sleep(1000);
-        driver.findElement((By.cssSelector(answersMenuCss))).click();
-        driver.findElement((By.cssSelector(QHinputCSS))).sendKeys("Анкета после релиза");
-        driver.findElement((By.cssSelector(TTinputCSS))).sendKeys("Автосервис на  краснова (Киев краснова 29)");
-        driver.findElement((By.cssSelector(CalendarCSS))).isDisplayed();
-        driver.findElement((By.xpath("//*[@class=\"dropdown-list__name___Ssqyk\"]//span[contains(text(),'Автосервис на  Краснова (Киев Краснова 29)')]"))).click();
+        $(((answersMenuCss))).click();
+        $(By.xpath((QHinputXpath))).val("Анкета после релиза");
+        $(By.xpath((TTinputXpath))).val("Автосервис на  краснова (Киев краснова 29)");
+        $(((CalendarCSS))).isDisplayed();
+        $((By.xpath("//*[@class=\"dropdown-list__name___Ssqyk\"]//span[contains(text(),'Автосервис на  Краснова (Киев Краснова 29)')]"))).click();
 //        Нажать на анкету и начать поиск
-        driver.findElement((By.cssSelector("div > div:first-child > div:nth-of-type(2) > div:nth-of-type(2) > div:first-child > div > div:nth-of-type(2) > div > button > div"))).click();
-
+        $((By.cssSelector("div > div:first-child > div:nth-of-type(2) > div:nth-of-type(2) > div:first-child > div > div:nth-of-type(2) > div > button > div"))).click();
 //       Проверка грида
-        driver.findElement((By.id("grid:answers"))).isDisplayed();
-        driver.findElement((By.className("grid-menu__icon___188J6"))).click();
-        driver.findElement((By.xpath("//*[@id=\"grid:answers\"]/div[2]/div/div"))).isDisplayed();
-
-
-
-//        Thread.sleep(2000);
-//тут может понадобится ожидание готовности элементов выпадающего списка
-
-        driver.close();
-        driver.quit();
-    }}
+        $((By.id("grid:answers"))).isDisplayed();
+        $((By.className("grid-menu__icon___188J6"))).click();
+        $((By.xpath("//*[@id=\"grid:answers\"]/div[2]/div/div"))).isDisplayed();
+close();
+    }
+    @Test
+    public void findAnswersFF() throws InterruptedException {
+        Configuration.browser = "firefox";
+        clearBrowserCookies();
+        open("https://portal-test.effie.ua/anon/login", EffieLoginPage.class).logincred(login,pswrd);
+        $(By.cssSelector(reportsMenuCss)).click();
+        Thread.sleep(1000);
+        $(((answersMenuCss))).click();
+        $(By.xpath((QHinputXpath))).val("Анкета после релиза");
+        $(By.xpath((TTinputXpath))).val("Автосервис на  краснова (Киев краснова 29)");
+        $(((CalendarCSS))).isDisplayed();
+        $((By.xpath("//*[@class=\"dropdown-list__name___Ssqyk\"]//span[contains(text(),'Автосервис на  Краснова (Киев Краснова 29)')]"))).click();
+//        Нажать на анкету и начать поиск
+        $((By.cssSelector("div > div:first-child > div:nth-of-type(2) > div:nth-of-type(2) > div:first-child > div > div:nth-of-type(2) > div > button > div"))).click();
+//       Проверка грида
+        $((By.id("grid:answers"))).isDisplayed();
+        $((By.className("grid-menu__icon___188J6"))).click();
+        $((By.xpath("//*[@id=\"grid:answers\"]/div[2]/div/div"))).isDisplayed();
+        close();
+    }
+    @Test
+    public void findAnswersEDGE() throws InterruptedException {
+        Configuration.browser = "EDGE";
+        clearBrowserCookies();
+        open("https://portal-test.effie.ua/anon/login", EffieLoginPage.class).logincred(login,pswrd);
+        $(By.cssSelector(reportsMenuCss)).click();
+        Thread.sleep(1000);
+        $(((answersMenuCss))).click();
+        $(By.xpath((QHinputXpath))).val("Анкета после релиза");
+        $(By.xpath((TTinputXpath))).val("Автосервис на  краснова (Киев краснова 29)");
+        $(((CalendarCSS))).isDisplayed();
+        $((By.xpath("//*[@class=\"dropdown-list__name___Ssqyk\"]//span[contains(text(),'Автосервис на  Краснова (Киев Краснова 29)')]"))).click();
+//        Нажать на анкету и начать поиск
+        $((By.cssSelector("div > div:first-child > div:nth-of-type(2) > div:nth-of-type(2) > div:first-child > div > div:nth-of-type(2) > div > button > div"))).click();
+//       Проверка грида
+        $((By.id("grid:answers"))).isDisplayed();
+        $((By.className("grid-menu__icon___188J6"))).click();
+        $((By.xpath("//*[@id=\"grid:answers\"]/div[2]/div/div"))).isDisplayed();
+        close();
+    }
+}
