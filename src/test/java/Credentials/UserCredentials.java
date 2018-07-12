@@ -53,9 +53,27 @@ public static String answersMenuCss = "body > div:nth-of-type(2) > a:nth-of-type
 //    PhotoGallery Links:
     public static String QHinputXpath = "//*[starts-with(@class, \"input__label\") and text() = 'Анкета']/../input";
 
-    public static String CalendarCSS = "div.input__readOnly___TEuol > div.input__right-side___cOpcX > input";
+    public static String CalendarCSS = "#root > div > div.authorized-layout__root___3dyAW > div.body__root___ec12A > div.body__content___3HFDp > div.body__page___1QEVr > div > div.filters-pane__root___er74L > div > div.date-range__root___1WA1s > div.input__root___3-KTp.input__fullwidth___1vAxA.input__filled___1RxIA.input__withicon___3b_62.input__readOnly___TEuol > div.input__rightSide___xpWwc > input";
+
+    public static String last30dayXpath = "//*[starts-with(@class, \"date-range-dropdown__item\") and text() = 'Последние 30 дней']";
     public static String TTinputXpath = "//*[starts-with(@class, \"filters-pane\")]//*[starts-with(@class, \"input__label\") and text() = 'Торговая точка']/../input";
     public static String EmployeeinputXpath = "//*[starts-with(@class, \"input__label\") and text() = 'Сотрудник']/../input";
+    public static String openedPhotoXpath = "//img[@class=\"ril-image-current ril__image\"]";
+    public static String openPhotoCSS = "div > div:first-child > div:nth-of-type(2) > div > img.photoReport-card__image___XEezK";
+    public static String infoPhotoButtonCss = "ul.ril-toolbar-right.ril__toolbarSide.ril__toolbarRightSide > li:nth-of-type(2) > div > svg > g > path";
+    public static String searchButtonCss = "div > div:first-child > div:nth-of-type(2) > button > span";
+    public static String pickQhXpath = "//*[starts-with(@class, \"report-query-list__name\") and text() = 'Анкета логика данет с фото']";
+    public static String photoInfoClass = "photo-info-panel__root___2il-B";
+    public static String[] photoinfoRU = {"Информация","Категория вопроса","Вопрос",
+            "Рекомендуемый ответ","Ответ","Комментарий","Торговая точка",
+            "Адрес","Сотрудник"};
+
+
+    //    Personal Assig:
+    public static String addPaToPhotoName = "photoReport-card__assignmentButton___TtuIT";
+public static String titlePaName = "assignmentTitle";
+    public static String descrPaName = "assignmentDescription";
+    public static String createPaXpath = "//*[starts-with(@class, \"button__text\") and text() = 'Создать']";
 
 
 //AnswerMenu links:
