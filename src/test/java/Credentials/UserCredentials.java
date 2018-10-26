@@ -23,7 +23,12 @@ public class UserCredentials {
 
 
     //   Site-menu links:
-    public static String reportsMenuCss = "div > div:nth-of-type(2) > div:nth-of-type(3) > button";
+//    public static String reportsMenuCss = "div > div:nth-of-type(2) > div:nth-of-type(3) > button";
+//    public static String reportsMenuCss = "//div[starts-with(@class, \"left-menu__list\")]/div[3]//div[starts-with(@class, \"item__leftIcon\")]/*";
+    public static String reportsMenuCss ="div > div:nth-of-type(2) > div:nth-of-type(3) > button > div:first-child > svg";
+
+
+
     public static String activityMenu = "div.left-menu-main > div:nth-of-type(5)";
     public static String constrAnketMenu = ".parent-list > div:nth-of-type(2)";
     public static String directoriesMenu = "i.fa.fa-archive";
@@ -46,27 +51,42 @@ public class UserCredentials {
     public static String saveManufButton = "div.button-wrap > button:first-child > div > span";
 
 //    Reports links:
-public static String photoGalleryMenuCss = "body > div:nth-of-type(2) > a:first-child";
-public static String answersMenuCss = "body > div:nth-of-type(2) > a:nth-of-type(2)";
+public static String photoGalleryMenuCss = "body > div:nth-of-type(3) > a:nth-of-type(2) > div";
+//public static String answersMenuCss = "body > div:nth-of-type(2) > a:nth-of-type(2)";
+    public static String answersMenuCss = "body > div.item__absoluteList___1xYsu > a:nth-child(1) > div";
+
+
     public static String visitsMenuCss = "body > div:nth-of-type(2) > a:nth-of-type(3)";
 
 //    PhotoGallery Links:
-    public static String QHinputXpath = "//*[starts-with(@class, \"input__label\") and text() = 'Анкета']/../input";
-
-    public static String CalendarCSS = "#root > div > div.authorized-layout__root___3dyAW > div.body__root___ec12A > div.body__content___3HFDp > div.body__page___1QEVr > div > div.filters-pane__root___er74L > div > div.date-range__root___1WA1s > div.input__root___3-KTp.input__fullwidth___1vAxA.input__filled___1RxIA.input__withicon___3b_62.input__readOnly___TEuol > div.input__rightSide___xpWwc > input";
-
-    public static String last30dayXpath = "//*[starts-with(@class, \"date-range-dropdown__item\") and text() = 'Последние 30 дней']";
-    public static String TTinputXpath = "//*[starts-with(@class, \"filters-pane\")]//*[starts-with(@class, \"input__label\") and text() = 'Торговая точка']/../input";
-    public static String EmployeeinputXpath = "//*[starts-with(@class, \"input__label\") and text() = 'Сотрудник']/../input";
-    public static String openedPhotoXpath = "//img[@class=\"ril-image-current ril__image\"]";
-    public static String openPhotoCSS = "div > div:first-child > div:nth-of-type(2) > div > img.photoReport-card__image___XEezK";
-    public static String infoPhotoButtonCss = "ul.ril-toolbar-right.ril__toolbarSide.ril__toolbarRightSide > li:nth-of-type(2) > div > svg > g > path";
-    public static String searchButtonCss = "div > div:first-child > div:nth-of-type(2) > button > span";
-    public static String pickQhXpath = "//*[starts-with(@class, \"report-query-list__name\") and text() = 'Анкета логика данет с фото']";
-    public static String photoInfoClass = "photo-info-panel__root___2il-B";
+//    public static String QHinputXpath = "//*[starts-with(@class, \"input__label\") and text() = 'Анкета']/../input";
+public static String openedPhotoXpath = "//img[@class=\"ril-image-current ril__image\"]";
+    public static String openPhotoCSS = "img";
+    public static String infoPhotoButtonCss = "div.ReactModalPortal > div > div > div > div.ril-toolbar.ril__toolbar > ul.ril-toolbar-right.ril__toolbarSide.ril__toolbarRightSide > li:nth-child(2) > div > svg";
+    public static String searchButtonXpath = "//*[starts-with(@class, \"button_text\") and text() = 'Применить']";
+    public static String pickQhXpath = "//*[starts-with(@class, \"report-query-list_name\") and text() = 'Анкета логика данет с фото']";
+    public static String photoInfoXpath = "//*[starts-with(@class, \"photo-info-panel_root\")]";
     public static String[] photoinfoRU = {"Информация","Категория вопроса","Вопрос",
             "Рекомендуемый ответ","Ответ","Комментарий","Торговая точка",
             "Адрес","Сотрудник"};
+
+
+
+    //    FILTERS
+    public static String QHinputXpath = "//*[starts-with(@class, \"input_label\") and text() = 'Анкета']/../input";
+    public static String CalendarCSS = "div.date-range_fullwidth__ZfxR_ > div:first-child > div:nth-of-type(2) > input";
+    public static String datePickerCss = "body > div:nth-of-type(3) > div > div > button > svg > path:first-child";
+    public static String last30dayXpath = "//*[starts-with(@class, \"date-range-dropdown_item\") and text() = 'Последние 30 дней']";
+    public static String EmployeeinputXpath = "//*[starts-with(@class, \"input_label\") and text() = 'Сотрудник']/../input";
+    public static String questCategoryinputXpath = "//*[starts-with(@class, \"input_label\") and text() = 'Категория вопроса']/../input";
+    public static String channelSaleinputXpath = "//*[starts-with(@class, \"input_label\") and text() = 'Канал продаж']/../input";
+    public static String banerinputXpath = "//*[starts-with(@class, \"input_label\") and text() = 'Торговая сеть']/../input";
+    public static String cityinputXpath = "//*[starts-with(@class, \"input_label\") and text() = 'Город']/../input";
+    public static String TTinputXpath = "//*[starts-with(@class, \"filters-pane\")]//*[starts-with(@class, \"input_label\") and text() = 'Торговая точка']/../input";
+    public static String groupinputXpath = "//*[starts-with(@class, \"input_label\") and text() = 'Группа пользователей']/../input";
+
+
+
 
 
     //    Personal Assig:
@@ -77,11 +97,6 @@ public static String titlePaName = "assignmentTitle";
 
 
 //AnswerMenu links:
-
-
-
-
-
 
     public String getCookies() {
         return cookies;

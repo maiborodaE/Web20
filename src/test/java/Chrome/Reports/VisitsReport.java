@@ -1,4 +1,4 @@
-package Reports;
+package Chrome.Reports;
 import Utils.EffieLoginPage;
 import com.codeborne.selenide.Configuration;
 import org.junit.Test;
@@ -12,8 +12,8 @@ public class VisitsReport {
     public void findVisitChrome() throws InterruptedException {
         Configuration.browser = "Chrome";
         clearBrowserCookies();
-        open("https://portal-test.effie.ua/anon/login", EffieLoginPage.class).logincred(login,pswrd);
-        $(By.cssSelector(reportsMenuCss)).click();
+        open(baseURL, EffieLoginPage.class).logincred(login,pswrd);
+        $(By.xpath(reportsMenuCss)).click();
         $(By.cssSelector(visitsMenuCss)).click();
         Thread.sleep(1000);
         $((By.xpath(EmployeeinputXpath))).sendKeys("Евгений Владимирович");
@@ -30,8 +30,8 @@ public class VisitsReport {
     public void findVisitFF() throws InterruptedException {
         Configuration.browser = "firefox";
         clearBrowserCookies();
-        open("https://portal-test.effie.ua/anon/login", EffieLoginPage.class).logincred(login,pswrd);
-        $(By.cssSelector(reportsMenuCss)).click();
+        open(baseURL, EffieLoginPage.class).logincred(login,pswrd);
+        $(By.xpath(reportsMenuCss)).click();
         $(By.cssSelector(visitsMenuCss)).click();
         Thread.sleep(1000);
         $((By.xpath(EmployeeinputXpath))).sendKeys("Евгений Владимирович");
@@ -48,7 +48,7 @@ public class VisitsReport {
     public void findVisitEDGE() throws InterruptedException {
         Configuration.browser = "EDGE";
         clearBrowserCookies();
-        open("https://portal-test.effie.ua/anon/login", EffieLoginPage.class).logincred(login,pswrd);
+        open(baseURL, EffieLoginPage.class).logincred(login,pswrd);
         $(By.cssSelector(reportsMenuCss)).click();
         $(By.cssSelector(visitsMenuCss)).click();
         Thread.sleep(1000);

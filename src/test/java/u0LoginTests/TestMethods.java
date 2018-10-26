@@ -1,8 +1,8 @@
 //package u0LoginTests;
 //
 //
-//import Reports.AnswersReport;
-//import Reports.VisitsReport;
+//import AnswersReport;
+//import VisitsReport;
 //import org.junit.Test;
 //
 //public class TestMethods {
